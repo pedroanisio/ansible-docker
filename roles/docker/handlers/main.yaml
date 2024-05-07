@@ -1,0 +1,7 @@
+- name: call echo
+  ansible.builtin.shell: echo "Hello World"
+
+- name: update cache
+  ansible.builtin.apt:
+    update_cache: yes
+

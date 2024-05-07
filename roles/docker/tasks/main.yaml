@@ -1,0 +1,6 @@
+---
+# Include tasks from an external file
+- name: External task
+  import_tasks: docker_install.yaml
+  tags: 
+    - setup

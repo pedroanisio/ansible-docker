@@ -1,0 +1,10 @@
+---
+docker_key_url: 'https://download.docker.com/linux/debian/gpg'
+docker_key_path: '/etc/apt/keyrings/docker.gpg'
+dkrs_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+non_root_user: 'pals'  

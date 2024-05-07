@@ -1,0 +1,6 @@
+---
+- name: Configure docker
+  hosts: dockers
+  become: yes
+  roles:
+    - docker
