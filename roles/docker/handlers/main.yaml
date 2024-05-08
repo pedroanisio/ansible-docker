@@ -5,3 +5,14 @@
   ansible.builtin.apt:
     update_cache: yes
 
+- name: reload sysctl
+  ansible.builtin.sysctl:
+    name: vm.max_map_count
+    value: '262144'
+    state: present
+    reload: yes
+
+- name: remove swap entry
+  ansible.builtin.command:
+    cmd: swapoff -a
+  listen: "update system settings"

@@ -1,0 +1,23 @@
+---
+- name: Disable swap
+  ansible.builtin.command:
+    cmd: swapoff -a
+  changed_when: false  # This command does not modify any files
+
+- name: Permanently disable swap by removing swap entries from /etc/fstab
+  ansible.builtin.lineinfile:
+    path: /etc/fstab
+    regexp: '^([^#].*?\sswap\s)'
+    line: '# \1'
+    backrefs: yes
+  notify:
+    - remove swap entry
+
+- name: Increase vm.max_map_count
+  ansible.builtin.sysctl:
+    name: vm.max_map_count
+    value: '262144'
+    state: present
+    reload: yes
+    sysctl_set: yes  # Ensure changes are written to sysctl.conf
+

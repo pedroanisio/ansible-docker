@@ -4,3 +4,10 @@
   import_tasks: docker_install.yaml
   tags: 
     - setup
+
+# Include tasks from an external file
+- name: Execute limits tasks
+  import_tasks: limits.yaml
+  tags: 
+    - setup
+
