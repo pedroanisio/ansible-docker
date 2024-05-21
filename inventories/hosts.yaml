@@ -33,6 +33,11 @@ dockers:
     srv-dkr-graylog:
       ansible_host: 10.10.10.8
 
+wan:
+  hosts:
+    debian-s-2vcpu-2gb-sfo3-01:
+      ansible_host: 147.182.199.48      
+
 vms:
   hosts:
     srv-docker-main-2:
