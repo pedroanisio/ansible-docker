@@ -1,6 +1,6 @@
 ---
 - name: Configure docker
-  hosts: dockers
+  hosts: test
   become: yes
   roles:
     - docker
